@@ -3,27 +3,27 @@ AMG Telegram Bot
 🚀 AMG Bot is a multi-functional Telegram bot built with Python and python-telegram-bot library.
 It provides AI-powered chat, group management tools, and interactive features for both users and admins.
 
-✨ Features
+Features
 
-💬 Private Chat with Admin (AMG) — users can send messages, media, and get replies directly.
+Private Chat with Admin (AMG) — users can send messages, media, and get replies directly.
 
-🧠 AI Assistant (GPT-3.5 via OpenRouter) — users with VIP access can ask questions and get intelligent answers.
+AI Assistant (GPT-3.5 via OpenRouter) — users with VIP access can ask questions and get intelligent answers.
 
-🛡️ Anti-Link Protection — automatically deletes unwanted links in groups.
+Anti-Link Protection — automatically deletes unwanted links in groups.
 
-👋 Auto-Welcome System — greets new members in groups.
+Auto-Welcome System — greets new members in groups.
 
-🌐 Proxy Sharing — admins can add and share updated proxies with users.
+Proxy Sharing — admins can add and share updated proxies with users.
 
-📜 Hafez Fortune Telling — provides random Hafez poems with interpretations.
+Hafez Fortune Telling — provides random Hafez poems with interpretations.
 
-🆘 Support Ticket System — users can submit issues or requests directly to admins.
+Support Ticket System — users can submit issues or requests directly to admins.
 
-🎮 Mini Game — number guessing game with limited/unlimited modes.
+Mini Game — number guessing game with limited/unlimited modes.
 
-📊 Admin Panel — manage users (ban/unban), broadcast messages, add/remove admins, manage VIP users, and view bot stats.
+Admin Panel — manage users (ban/unban), broadcast messages, add/remove admins, manage VIP users, and view bot stats.
 
-📢 Sponsored Channel Membership Check — ensures users join sponsor channels before accessing features.
+Sponsored Channel Membership Check — ensures users join sponsor channels before accessing features.
 
 🛠️ Commands
 
@@ -59,8 +59,8 @@ It provides AI-powered chat, group management tools, and interactive features fo
 
 Clone this repository:
 
-git clone https://github.com/yourusername/AMG-Telegram-Bot.git
-cd AMG-Telegram-Bot
+git clone https://github.com/AMG-ir/telegram-Bot.git
+cd telegram-Bot
 
 
 Install dependencies:
@@ -86,7 +86,7 @@ Works in both private chats and groups.
 
 Some features (AI, proxies, etc.) are restricted to VIP users.
 
-👤 Developer: @AMG_ir
-🧠 AI Model: OpenRouter - GPT-3.5-Turbo
+Developer: @AMG_ir
+AI Model: OpenRouter - GPT-3.5-Turbo
 🔖 Version: v2.2.0-AR
 📅 Release Date: 2025/07/16
