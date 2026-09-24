@@ -88,5 +88,5 @@ Some features (AI, proxies, etc.) are restricted to VIP users.
 
 Developer: @AMG_ir
 AI Model: OpenRouter - GPT-3.5-Turbo
-🔖 Version: v2.2.0-AR
-📅 Release Date: 2025/07/16
+Version: v2.2.0-AR
+Release Date: 2025/07/16
