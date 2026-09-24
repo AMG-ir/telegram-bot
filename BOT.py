@@ -17,7 +17,7 @@ from collections import defaultdict
 load_dotenv()
 TOKEN = os.getenv("BOT_AMG") 
 ADMIN_IDS = 6807376124
-ADMIN_ID = {6807376124}  # ادمین اصلی (ست اول)
+ADMIN_ID = {6807376124} 
 OPENROUTER_API_KEY = "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"
 
 
@@ -192,7 +192,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
             ["ℹ️ درباره ربات", "📖 راهنما"]
         ], resize_keyboard=True)
     else:
-        reply_keyboard = None  # توی گروه کیبورد نمی‌خوایم
+        reply_keyboard = None 
 
 
     if not await check_channel_membership(user_id, context):
@@ -226,7 +226,6 @@ async def check_channel_membership(user_id: int, context: ContextTypes.DEFAULT_T
             if chat_member.status not in [ChatMember.MEMBER, ChatMember.OWNER, ChatMember.ADMINISTRATOR]:
                 return False
         except Exception:
-            # خطا در گرفتن اطلاعات یعنی احتمالا عضو نیست یا دسترسی نیست، پس کانال رو رد کن
             return False
     return True
 
@@ -336,7 +335,6 @@ async def handle_user_msg(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text(random.choice(responses))
             return
 
-    # --- ارسال فال حافظ با تعبیر ---
     # --- فال حافظ ---
     if update.message.chat.type in ["group", "supergroup"]:
         if "فال" in text or "فال حافظ" in text:
@@ -367,7 +365,7 @@ async def handle_user_msg(update: Update, context: ContextTypes.DEFAULT_TYPE):
             
         if text == "پنل ربات":
             keyboard = InlineKeyboardMarkup([
-                # 🔐 مدیریت گروه
+                #  مدیریت گروه
                 [
                     InlineKeyboardButton("🚫 فعال‌سازی ضد لینک", callback_data="enable_anti_link"),
                     InlineKeyboardButton("✅ غیرفعال‌سازی ضد لینک", callback_data="disable_anti_link")
@@ -377,7 +375,7 @@ async def handle_user_msg(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     InlineKeyboardButton("❌ حذف خوشامد", callback_data="del_welcome")
                 ],
         
-                # 🌐 امکانات عمومی
+                #  امکانات عمومی
                 [
                     InlineKeyboardButton("🔑 دریافت پروکسی", callback_data="get_proxy"),
                     InlineKeyboardButton("📢 سفارش تبلیغ", callback_data="advertise")
@@ -387,7 +385,7 @@ async def handle_user_msg(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     InlineKeyboardButton("📞 پشتیبانی", callback_data="support")
                 ],
         
-                # 🤖 سرگرمی و هوش مصنوعی
+                #  سرگرمی و هوش مصنوعی
                 [
                     InlineKeyboardButton("🤖 چت هوش مصنوعی", callback_data="chat_ai"),
                     InlineKeyboardButton("📜 فال حافظ", callback_data="hafez")
@@ -397,7 +395,7 @@ async def handle_user_msg(update: Update, context: ContextTypes.DEFAULT_TYPE):
                     InlineKeyboardButton("🏆 جدول برترین‌ها", callback_data="top")
                 ],
         
-                # 👤 کاربری
+                #  کاربری
                 [
                     InlineKeyboardButton("👤 پروفایل من", callback_data="profile"),
                     InlineKeyboardButton("🎉 وضعیت VIP", callback_data="vipme")
@@ -823,9 +821,6 @@ async def ask_ai(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except Exception as e:
         await update.message.reply_text(f"❌ خطا در ارتباط با هوش مصنوعی:\n{e}")
 
-# --- حذف منوی ویژه و اضافه کردن گزینه‌های درخواست پشتیبانی و افزودن به گروه در منوی پایین ---
-
-# (اینکار در منوی start انجام شده)
 
 # --- ضد لینک ---
 
@@ -901,7 +896,7 @@ async def show_profile(update: Update, context: ContextTypes.DEFAULT_TYPE):
     join_date = profile.get("join_date", "—")
     ai_uses = profile.get("ai_uses", 0)
 
-    # متن زیبا
+    
     text = (
         f"👤 <b>{user.full_name}</b>\n"
         f"🆔 <code>{user_id}</code>\n\n"
@@ -1496,11 +1491,9 @@ async def handle_rps_choice(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await query.edit_message_text("🚪 شما از بازی خارج شدید.")
         return
 
-    # انتخاب ربات
     bot_choice = random.choice(["rock", "paper", "scissors"])
     emoji_map = {"rock": "🪨", "paper": "📄", "scissors": "✂️"}
 
-    # برنده رو مشخص کن
     if user_choice == bot_choice:
         result = "🤝 مساوی شد!"
     elif (user_choice == "rock" and bot_choice == "scissors") or \
@@ -1517,7 +1510,6 @@ async def handle_rps_choice(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"{result}"
     )
 
-    # دوباره گزینه‌ها برای ادامه
     keyboard = InlineKeyboardMarkup([
         [
             InlineKeyboardButton("🪨 سنگ", callback_data="rps_rock"),
@@ -1578,7 +1570,7 @@ async def remove_special(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 
-# --- اضافه کردن هندلر‌ها ---
+# --- هندلر‌ها ---
 
 def main():    
     app = ApplicationBuilder().token(TOKEN).build()
